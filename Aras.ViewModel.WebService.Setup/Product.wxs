@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">  
+  <Product Id="D919342C-8BB1-4C4F-81AD-36DFE5426DF0" Name="AAD" Language="1033" Version="0.04.0000" Manufacturer="Processwall Limited" UpgradeCode="D420E637-27D7-4D84-9B2F-CEADF4453629">
+    
+    <Package InstallerVersion="500" Compressed="yes" InstallScope="perMachine" />
+      
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+
+    <Media Id="1" Cabinet="AAD.cab" EmbedCab="yes" />
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFiles64Folder">
+        <Directory Id="AESSISFOLDER" Name="Processwall">
+          <Directory Id="AADFOLDER" Name="AAD">
+            <Directory Id="INSTALLFOLDER" Name="WebService">
+              <Directory Id="CLIENTFOLDER" Name="Client"/>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+    </Directory>
+    
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
+    <Property Id="ARAS_WEBSITE_NAME" Value="Default Web Site"/>
+
+    <Property Id="ARAS_WEBSITE_PORT" Value="80"/>
+    
+    <Property Id="ARAS_VIRDIR" Value="InnovatorServer"/>
+    
+    <Feature Id="ProductFeature" Title="AAD WebService" Level="1">
+      <ComponentGroupRef Id="AADWebComponents" />
+      <ComponentGroupRef Id="AADHTML5Components" />
+      <ComponentGroupRef Id="AADIssConfiguration" />
+    </Feature>
+
+    <UIRef Id="UI_AAD" />
+    
+    
+  </Product>
+
+</Wix>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+	<Fragment>
+
+    <Property Id="IIS_MAJOR_VERSION">
+      <RegistrySearch Id="CheckIISVersion" Root="HKLM" Key="SOFTWARE\Microsoft\InetStp" Name="MajorVersion" Type="raw" />
+    </Property>
+
+    <Condition Message="IIS must be installed">
+      Installed OR IIS_MAJOR_VERSION
+    </Condition>
+    
+    <iis:WebSite Id="DefaultWebSite" Description="[ARAS_WEBSITE_NAME]">
+      <iis:WebAddress Id="AllUnassigned" Port="ARAS_WEBSITE_PORT" />
+    </iis:WebSite>
+
+    <DirectoryRef Id="INSTALLFOLDER">
+      
+      <Component Id="AADAppPool" Guid="F2976CD5-297E-40F7-B92B-D388A9E32289" KeyPath="yes">
+        <iis:WebAppPool Id="AADAppPool" Name="AAD" Identity="applicationPoolIdentity" ManagedPipelineMode="Integrated" ManagedRuntimeVersion="v4.0" />
+      </Component>
+      
+      <Component Id="InstallAADVirtualDirectory" Guid="32AB7AE3-6C66-4C90-8E0A-C5836AE207FA" KeyPath="yes">
+
+        <iis:WebVirtualDir Id="AADVirtualDirectory" Alias="[ARAS_VIRDIR]/AAD" Directory="INSTALLFOLDER" WebSite="DefaultWebSite">
+          <iis:WebApplication Id="AADApplication" Name="[AADWebSite][WEBSITE_ID]" WebAppPool="AADAppPool"></iis:WebApplication>
+        </iis:WebVirtualDir>
+
+        <util:EventSource Log="Application" Name="Aras Web Service" EventMessageFile="[NETFRAMEWORK40FULLINSTALLROOTDIR64]EventLogMessages.dll"/>
+        
+      </Component>
+  
+    </DirectoryRef>
+
+    <ComponentGroup Id="AADIssConfiguration">
+      <ComponentRef Id="InstallAADVirtualDirectory" />
+      <ComponentRef Id="AADAppPool" />
+    </ComponentGroup>
+    
+	</Fragment>
+</Wix>

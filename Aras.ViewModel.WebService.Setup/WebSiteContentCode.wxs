@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <DirectoryRef Id="INSTALLFOLDER">
+            <Directory Id="dir7307A6085BD4ABD9B8955C093FD541F5" Name="bin" />
+        </DirectoryRef>
+    </Fragment>
+    <Fragment>
+        <ComponentGroup Id="AADWebComponents">
+            <Component Id="cmp02EE54EBD74E2146A6EC4D74D3AB50D8" Directory="INSTALLFOLDER" Guid="{2E38BD2F-4C57-44A6-A6EC-354B8D6E4575}">
+                <File Id="fil7B30BC9CCA559BD31DBA6E97D4502B04" KeyPath="yes" Source="$(var.publishDir)\default.html" />
+            </Component>
+            <Component Id="cmp2A2B27F5AD386D451F6AD02173DDB353" Directory="INSTALLFOLDER" Guid="{A68106FB-191B-4B71-B995-FC08A219705F}">
+                <File Id="fil510301A614A8F3D47B8A045FFEEF1D35" KeyPath="yes" Source="$(var.publishDir)\favicon.ico" />
+            </Component>
+            <Component Id="cmp6A4F9D28DF6F992FCE04768A605F3F6B" Directory="INSTALLFOLDER" Guid="{E9AB98C0-65A8-4A76-A316-68C1ACE04A15}">
+                <File Id="fil290EB696DE8E76F029E58930686F7404" KeyPath="yes" Source="$(var.publishDir)\Global.asax" />
+            </Component>
+            <Component Id="cmp3DE0E27CB4AD0EAD15733F20AB0760EF" Directory="INSTALLFOLDER" Guid="{51867FB1-6FA3-47BA-B177-BD2CE50D2275}">
+                <File Id="filF804CBAD53A94E1BE2AB44FD5DF0AB63" KeyPath="yes" Source="$(var.publishDir)\packages.config" />
+            </Component>
+            <Component Id="cmpCDB7F4EFDEF1E65C3B12BEBAD7E4D7EA" Directory="INSTALLFOLDER" Guid="{0686902E-6E3A-41E6-8A97-3396D94E424F}">
+                <File Id="fil8994620207C22CA15AF75ACDD6420C79" KeyPath="yes" Source="$(var.publishDir)\Web.config" />
+            </Component>
+            <Component Id="cmp5FED2CD272A2A5036BAD280773E0BA32" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{0016DB06-47B8-4E01-8992-22A09DACA18A}">
+                <File Id="fil9F1F3FDEFB9EE5BA444ED6E05031C160" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.IO.dll" />
+            </Component>
+            <Component Id="cmp24D75E53856CB8ACEE580B6D627D25A2" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{0FBDF493-87E2-4210-A55F-444F296E042E}">
+                <File Id="filCE8512103BC1830AC15CDFBAAFF22130" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.Logging.dll" />
+            </Component>
+            <Component Id="cmp790D61982C9CBCFFD3EB8522AD44EE2A" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{949DD56C-0EDA-4E67-86F8-4107429A1259}">
+                <File Id="filF44D112FFA7ED930DA8408B5626EB7BA" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.Logging.Events.dll" />
+            </Component>
+            <Component Id="cmpFF0A2EB8EF9498991F8E94C5B037FA30" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{29CFA973-E33D-4700-884C-298F6EB86A6B}">
+                <File Id="fil0B816A570BE859185A2A3C52541D6C1B" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.Model.Design.dll" />
+            </Component>
+            <Component Id="cmp0DC3D14733AC7AF2686AFBD9DF779C49" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{ACBACAE7-80D1-448A-8B8C-846BEE2DD213}">
+                <File Id="fil76BF07490031550DBBC0F95B619357AB" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.Model.dll" />
+            </Component>
+            <Component Id="cmp4346DCFEE73B107837EE2252D3D08183" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{DA8FE369-DC43-4B18-AB55-E71712274290}">
+                <File Id="filD3EDE20BED6DA514191F3244E19AB0B2" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.ViewModel.Design.dll" />
+            </Component>
+            <Component Id="cmp3100F9B0CCD70509FB84E3D49FA4EA17" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{199EF63D-2489-4060-A929-14D1F49B9BF9}">
+                <File Id="fil477BF50893648D123891EF09C02E9BDB" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.ViewModel.dll" />
+            </Component>
+            <Component Id="cmp31167A90F9B1DB88D918C2411EA4D45C" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{AE09841E-AD19-45A2-9981-214EC4F70F34}">
+                <File Id="fil555BA61D1389A8F650B692497BBC40B4" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.ViewModel.Manager.dll" />
+            </Component>
+            <Component Id="cmpA62CB9C921D3A9746292FE4BDC37A7D4" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{4B05AB1D-66D8-4B6A-8DEB-6C5987114FEA}">
+                <File Id="fil4AD2D11B5958D6B00842D7429EF6FF3F" KeyPath="yes" Source="$(var.publishDir)\bin\Aras.ViewModel.WebService.dll" />
+            </Component>
+            <Component Id="cmpBE9BB87ABB7F80C07AB897C66C4BFF19" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{B4B62807-E7EF-498F-9A9B-01C9094D50E0}">
+                <File Id="fil7AB5AC371ADF176E37A0069DBDC4AC3A" KeyPath="yes" Source="$(var.publishDir)\bin\Newtonsoft.Json.dll" />
+            </Component>
+            <Component Id="cmp32CCDC9B03F8214C5DDDD9717C0B0DCD" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{7E286F23-4AEA-496B-A373-AF9930624E50}">
+                <File Id="filE0FB58A4175F7308CE35641BA9BE27A2" KeyPath="yes" Source="$(var.publishDir)\bin\System.Net.Http.Formatting.dll" />
+            </Component>
+            <Component Id="cmpA4AC38BCA223E6D040AD4A04A51212F6" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{8D2AEA3B-A3EC-43DA-BF00-15684811F1B5}">
+                <File Id="fil1BD09656A2C8B2EBF00273581FBA8B7C" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.Http.dll" />
+            </Component>
+            <Component Id="cmpE60845712FBC0938EC9D42DA0FBDFF44" Directory="dir7307A6085BD4ABD9B8955C093FD541F5" Guid="{6DC74C28-D50A-4F8D-8C0A-CFD206590A41}">
+                <File Id="fil48FFACF5B48D90E04AB03B84E2880B26" KeyPath="yes" Source="$(var.publishDir)\bin\System.Web.Http.WebHost.dll" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>
